@@ -1,11 +1,7 @@
 package com.zzy;
 
-import io.reactivex.*;
-import io.reactivex.disposables.Disposable;
-
 import javax.swing.*;
 import java.awt.*;
-import java.util.concurrent.Callable;
 
 public class Main extends JFrame {
 
@@ -15,31 +11,22 @@ public class Main extends JFrame {
         this.setTitle("获取地址");
 
         label = new JLabel("ip地址：");
-        label.setSize(300,300);
 
-//        for (int i = 0; i < 5; i++) {
-//            JButton button = new JButton("开始");
-//
-//            this.add(button);
-//        }
-
+//        添加控件
         this.add(label);
 
-//        this.setLayout(new FlowLayout());
+//        设置布局
+        this.setLayout(new FlowLayout());
 
-//        设置窗口宽度和高度
-        this.setSize(300, 300);
+//        设置窗口宽度和高度  单位是i像素
+        this.setSize(400, 400);
 
 //        设置这个属性点击关闭会退出整个应用，不加就不会
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置为null窗口在窗口中间
-//        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
 
-
-//        new MyThread(this);
-//        new MyThread(this);
-//        new MyThread(this);
-//        设置为true显示窗口，必须
+//        设置为true才能显示窗口，必须
         this.setVisible(true);
 
 

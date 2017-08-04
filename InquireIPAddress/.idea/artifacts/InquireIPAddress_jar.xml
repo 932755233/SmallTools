@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="InquireIPAddress:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/InquireIPAddress_jar</output-path>
+    <root id="archive" name="InquireIPAddress.jar">
+      <element id="module-output" name="InquireIPAddress" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jsoup-1.10.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/rxjava-2.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/reactive-streams-1.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

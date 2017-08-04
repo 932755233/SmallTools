@@ -2,15 +2,20 @@ package com.zzy;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import jdk.nashorn.internal.parser.JSONParser;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+import org.w3c.dom.NodeList;
 
-import java.io.*;
+import javax.swing.text.html.HTML;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class HttpManager {
 
@@ -29,19 +34,25 @@ public class HttpManager {
             connection.setDoOutput(true);
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                InputStream inputStream = connection.getInputStream();
-                InputStreamReader reader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(reader);
 
+                InputStream inputStream = connection.getInputStream();
+                //要在流之前编码
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "GB2312");
+                BufferedReader reader = new BufferedReader(inputStreamReader);
+
+                StringBuffer sb = new StringBuffer();
                 String str = "";
-                String sss = "";
-                while ((str = bufferedReader.readLine()) != null) {
-                    sss += new String(str.getBytes("gb2312"), "utf-8");
+                while ((str = reader.readLine()) != null) {
+                    sb.append(str);
                 }
 
 
-//                String utf = new String(sb.substring(ii).getBytes("gb2312"), "UTF-8");
-                emitter.onNext(sss);
+                Document document = Jsoup.parse(sb.toString());
+                Elements center = document.getElementsByTag("center");
+                String html = center.html();
+
+
+                emitter.onNext(html);
 
 
             } else {
