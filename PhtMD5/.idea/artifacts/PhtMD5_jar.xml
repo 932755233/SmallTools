@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PhtMD5:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PhtMD5_jar</output-path>
+    <root id="archive" name="PhtMD5.jar">
+      <element id="module-output" name="PhtMD5" />
+    </root>
+  </artifact>
+</component>
