@@ -110,8 +110,35 @@ public class Main {
 
 //        String strDecode = DesUtils.strDecode("B0DD01C9A9E3C5EA57EA7E4C3AA902208B86CD6534F82AF8");
 //        String strDecode = DesUtils.strDecode("0014651BF554BAE0264E2CFA3FF8CE9C8B86CD6534F82AF8");
-        switch (1) {
-            case 5:{
+        switch (6) {
+            case 6: {
+                List<String> codeList = new ArrayList<>();
+                for (int n = 0; n < 1000; n++) {
+                    codeList.add("name" + n);
+                }
+                log("zzy---" + codeList.get(codeList.size() - 1));
+
+                StringBuffer sb = new StringBuffer();
+                for (int i = 0; i < codeList.size(); i++) {
+                    String item = codeList.get(i);
+                    if (i % 1000 == 0) {
+                        if (sb.length() != 0) {
+                            log("写入数据：" + sb.toString());
+                            sb.setLength(0);
+                            sb.append(item);
+                        } else {
+                            sb.append(item);
+                        }
+                    } else {
+                        sb.append("脑袋");
+                        sb.append(item);
+                    }
+                }
+                log("写入数据：" + sb.toString());
+
+                break;
+            }
+            case 5: {
                 SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                 Date date = new Date();
@@ -123,7 +150,6 @@ public class Main {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-
 
 
                 break;

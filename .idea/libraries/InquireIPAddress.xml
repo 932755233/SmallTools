@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="InquireIPAddress">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/InquireIPAddress/out/artifacts/InquireIPAddress_jar/InquireIPAddress.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

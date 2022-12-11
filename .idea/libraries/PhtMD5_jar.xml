@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="PhtMD5_jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PhtMD5/out/artifacts/PhtMD5_jar/生成密码.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PhtMD5/out/artifacts/PhtMD5_jar/PhtMD5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
