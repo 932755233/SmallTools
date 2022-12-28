@@ -11,6 +11,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 //    Map<String, String> data = new HashMap<>();
@@ -110,7 +112,17 @@ public class Main {
 
 //        String strDecode = DesUtils.strDecode("B0DD01C9A9E3C5EA57EA7E4C3AA902208B86CD6534F82AF8");
 //        String strDecode = DesUtils.strDecode("0014651BF554BAE0264E2CFA3FF8CE9C8B86CD6534F82AF8");
-        switch (6) {
+        switch (7) {
+            case 7:{
+                String content = "slkdfjalsdkjlfjlskdjf1998sduewiuqwjekqwe";
+                Pattern compile = Pattern.compile("\\d\\d");
+                Matcher matcher = compile.matcher(content);
+                while (matcher.find()){
+                    System.out.println(matcher.group());
+                }
+
+                break;
+            }
             case 6: {
                 List<String> codeList = new ArrayList<>();
                 for (int n = 0; n < 1000; n++) {
